@@ -38,25 +38,28 @@ class Square{
 };
 class Circle{
     private:
-        int radius;
+        double  radius;
     public:
-        Circle(int r)
+        Circle(){
+            radius = 0;
+        }
+        Circle(double  r)
         {
             radius = r;
         }
-        int area()
+        double  area()
         {
             return 3.14 * radius * radius;
         }
-        int perimeter()
+        double  perimeter()
         {
             return 2 * 3.14 * radius;
         }
-        void setRadius(int r)
+        void setRadius(double r)
         {
             radius = r;
         }
-        int getRadius()
+        double getRadius()
         {
             return radius;
         }
@@ -139,14 +142,23 @@ int main()
 //    displaying  the name and registration number of a student
     printSuccess("Name:\tLEWIS MUNENE KIRIMI   \nReg. No.:\tSCT211-0014/2021   \nAssignment2    \nUnit code \t ICS2201    Unit Name : OBJECT ORIENTED  PROGRAMMING");
 
+
+
+     Square square;
+     Circle  circle;
+     circle.setRadius(234);
+
+     cout <<"The radius of the circle is " << circle.getRadius()<< endl;
+
+
+
     int choice;
 
     cout << "\n\n\n   Choose a Figure below: \n1.Square   \n2.Circle    \n3.Cylinder   \n4.Sphere   \n5.Exit   \n\n >>>>";
 
+
     // getting  the  input choice
     cin >> choice;
-
-     Square square;
 
 
     switch (choice)
