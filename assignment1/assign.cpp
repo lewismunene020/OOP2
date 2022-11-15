@@ -14,29 +14,39 @@ class Square{
     private:
         double side;
     public:
+    // constructors in the class
+    // default constructor
         Square(){
             side = 0;
         }
+
+        // parameterized constructor
         Square(double s)
         {
             side = s;
         }
-        double getArea()
-        {
-            return side * side;
-        }
-        double getPerimeter()
-        {
-            return 4 * side;
-        }
+
+    // setter
         void setSide(int s)
         {
             side = s;
         }
+    // getter
         double getSide()
         {
             return side;
         }
+    // compute area
+        double getArea()
+        {
+            return side * side;
+        }
+    // compute perimeter
+        double getPerimeter()
+        {
+            return 4 * side;
+        }
+
 };
 class Circle{
     private:
