@@ -37,14 +37,20 @@ class Square{
             return side;
         }
     // compute area
-        double getArea()
+        double computeArea()
         {
             return side * side;
         }
     // compute perimeter
-        double getPerimeter()
+        double computePerimeter()
         {
             return 4 * side;
+        }
+    // display
+        void printSquare()
+        {
+            cout << "\n\n\n Shape : Square \n\nLength :\t"<< getSide() << "cm\nArea :\t"<< computeArea() << " cm squared\nPerimeter :\t"<< computePerimeter()<<"cm"<<endl;
+
         }
 
 };
@@ -73,14 +79,21 @@ class Circle{
             return radius;
         }
     // compute area
-        double  area()
+        double  getArea()
         {
             return PI * radius * radius;
         }
     // compute perimeter
-        double  getPerimeter()
+        double  computePerimeter()
         {
             return 2 * PI * radius;
+        }
+    
+    // display
+        void printCircle()
+        {
+            cout << "\n\n\n Shape : Circle \n\nRadius :\t"<< getRadius() << "cm\nArea :\t"<< getArea() << " cm squared\nPerimeter :\t"<< computePerimeter()<<"cm"<<endl;
+
         }
 
 };
@@ -98,11 +111,11 @@ class Cylinder{
             radius = r;
             height = h;
         }
-        double getArea()
+        double computeArea()
         {
             return 2 * PI * radius * (radius + height);
         }
-        double getVolume()
+        double computeVolume()
         {
             return PI * radius * radius * height;
         }
@@ -122,6 +135,13 @@ class Cylinder{
         {
             return height;
         }
+        void printCylinder()
+        {
+            cout << "\n\n\n Shape : Cylinder \n\nRadius :\t"<< getRadius() << "cm\nHeight :\t"<< getHeight() << "cm\nArea :\t"<< computeArea() << " cm squared\nVolume :\t"<< computeVolume()<<"cm cubed"<<endl;
+
+        }
+
+ 
 
 };
 class Sphere{
@@ -137,11 +157,11 @@ class Sphere{
         {
             radius = r;
         }
-        double getArea()
+        double computeArea()
         {
             return 4 * PI * radius * radius;
         }
-        double getVolume()
+        double computeVolume()
         {
             return 4/3 * PI * radius * radius * radius;
         }
@@ -152,6 +172,11 @@ class Sphere{
         double getRadius()
         {
             return radius;
+        }
+        void printSphere()
+        {
+            cout << "\n\n\n Shape : Sphere \n\nRadius :\t"<< getRadius() << "cm\nArea :\t"<< computeArea() << " cm squared\nVolume :\t"<< computeVolume()<<"cm cubed"<<endl;
+
         }
 };
 
@@ -200,8 +225,7 @@ int main()
         double side;
         cin >> side;
         square.setSide(side);
-        cout << "\n\n\n Shape : Square \n\nLength :\t"<< square.getSide() << "cm\nArea :\t"<< square.getArea() << " cm squared\nPerimeter :\t"<< square.getPerimeter()<<"cm"<<endl;
-       
+        square.printSquare();
         
         break;
 
@@ -210,8 +234,7 @@ int main()
         double circleRadius;
         cin >> circleRadius;
         circle.setRadius(circleRadius);
-        cout << "\n\n\n Shape : Circle \n\nRadius :\t"<< circle.getRadius() << "cm\nArea :\t"<< circle.area() << " cm squared\nPerimeter :\t"<< circle.getPerimeter()<<"cm"<<endl;
-       
+        circle.printCircle();
         break;
     case 3:
         double cylinderRadius;
@@ -224,8 +247,8 @@ int main()
 
         cylinder.setRadius(cylinderRadius);
         cylinder.setHeight(cylinderHeight);
-      
-        cout << "\n\n\n Shape : Cylinder \n\nRadius :\t"<< cylinderRadius << "cm\nHeight :\t"<< cylinderHeight << "cm\nArea :\t"<< cylinder.getArea() << " cm squared\nVolume :\t"<< cylinder.getVolume()<<"cm cubed"<<endl;
+
+        cylinder.printCylinder();
 
         break;
     case 4:
@@ -233,7 +256,7 @@ int main()
         cout << "Enter  the radius  of the sphere in centimetres : ";
         cin >> sphereRadius;
         sphere.setRadius(sphereRadius);
-        cout << "\n\n\n Shape : Sphere \n\nRadius :\t"<< sphereRadius << "cm\nArea :\t"<< sphere.getArea() << " cm squared\nVolume :\t"<< sphere.getVolume()<<"cm cubed"<<endl;
+        sphere.printSphere();
         break;
     case 5:
         cout << "Bye Bye ! See you next time !"; 
