@@ -48,33 +48,41 @@ class Square{
         }
 
 };
+
 class Circle{
     private:
         double  radius;
     public:
+    // default constructor
         Circle(){
             radius = 0;
         }
+    // parameterized constructor
         Circle(double  r)
         {
             radius = r;
         }
-        double  area()
-        {
-            return PI * radius * radius;
-        }
-        double  getPerimeter()
-        {
-            return 2 * PI * radius;
-        }
-        void setRadius(double r)
+    // setter
+            void setRadius(double r)
         {
             radius = r;
         }
+    // getter
         double getRadius()
         {
             return radius;
         }
+    // compute area
+        double  area()
+        {
+            return PI * radius * radius;
+        }
+    // compute perimeter
+        double  getPerimeter()
+        {
+            return 2 * PI * radius;
+        }
+
 };
 class Cylinder{
     private:
