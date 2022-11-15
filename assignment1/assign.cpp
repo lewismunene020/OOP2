@@ -126,25 +126,30 @@ class Cylinder{
 };
 class Sphere{
     private:
-        int radius;
+        double radius;
     public:
-        Sphere(int r)
+        Sphere(){
+            radius = 0;
+        }
+
+
+        Sphere(double r)
         {
             radius = r;
         }
-        int area()
+        double getArea()
         {
-            return 4 * 3.14 * radius * radius;
+            return 4 * PI * radius * radius;
         }
-        int volume()
+        double getVolume()
         {
-            return 4/3 * 3.14 * radius * radius * radius;
+            return 4/3 * PI * radius * radius * radius;
         }
-        void setRadius(int r)
+        void setRadius(double r)
         {
             radius = r;
         }
-        int getRadius()
+        double getRadius()
         {
             return radius;
         }
@@ -171,6 +176,8 @@ int main()
      Square square;
      Circle  circle;
      Cylinder cylinder;
+    Sphere sphere;
+
 
 
      cout <<"The radius of the circle is " << circle.getRadius()<< endl;
@@ -222,16 +229,19 @@ int main()
 
         break;
     case 4:
-        cout << "Sphere";
+        double sphereRadius;
+        cout << "Enter  the radius  of the sphere in centimetres : ";
+        cin >> sphereRadius;
+        sphere.setRadius(sphereRadius);
+        cout << "\n\n\n Shape : Sphere \n\nRadius :\t"<< sphereRadius << "cm\nArea :\t"<< sphere.getArea() << " cm squared\nVolume :\t"<< sphere.getVolume()<<"cm cubed"<<endl;
         break;
     case 5:
         cout << "exit";
         exit(0);
         break;
     
-    
-    
     default:
+        cout<<"Invalid choice"<<endl;
         break;
     }
    
