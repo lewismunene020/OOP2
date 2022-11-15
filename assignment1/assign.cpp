@@ -7,6 +7,7 @@ using namespace std;
 #define RED_COLOR  "\033[1;31m"
 #define GREEN_COLOR "\033[1;32m"
 #define NO_COLOR  "\033[0m"
+#define PI 3.14159265358979323846
 
 class Square{
     private:
@@ -49,11 +50,11 @@ class Circle{
         }
         double  area()
         {
-            return 3.14 * radius * radius;
+            return PI * radius * radius;
         }
-        double  perimeter()
+        double  getPerimeter()
         {
-            return 2 * 3.14 * radius;
+            return 2 * PI * radius;
         }
         void setRadius(double r)
         {
@@ -66,35 +67,39 @@ class Circle{
 };
 class Cylinder{
     private:
-        int radius;
-        int height;
+        double radius;
+        double height;
     public:
-        Cylinder(int r, int h)
+        Cylinder(){
+            radius = 0;
+            height = 0;
+        }
+        Cylinder(double r, double h )
         {
             radius = r;
             height = h;
         }
-        int area()
+        double getArea()
         {
-            return 2 * 3.14 * radius * (radius + height);
+            return 2 * PI * radius * (radius + height);
         }
-        int volume()
+        double getVolume()
         {
-            return 3.14 * radius * radius * height;
+            return PI * radius * radius * height;
         }
-        void setRadius(int r)
+        void setRadius(double r)
         {
             radius = r;
         }
-        int getRadius()
+        double getRadius()
         {
             return radius;
         }
-        void setHeight(int h)
+        void setHeight(double h)
         {
             height = h;
         }
-        int getHeight()
+        double getHeight()
         {
             return height;
         }
@@ -143,10 +148,11 @@ int main()
     printSuccess("Name:\tLEWIS MUNENE KIRIMI   \nReg. No.:\tSCT211-0014/2021   \nAssignment2    \nUnit code \t ICS2201    Unit Name : OBJECT ORIENTED  PROGRAMMING");
 
 
-
+    // declaring  objects of the classes Square, Circle, Cylinder and Sphere
      Square square;
      Circle  circle;
-     circle.setRadius(234);
+     Cylinder cylinder;
+
 
      cout <<"The radius of the circle is " << circle.getRadius()<< endl;
 
@@ -164,21 +170,37 @@ int main()
     switch (choice)
     {
     case 1:
-        cout << "Enter  the length  of the square(centimetres) : ";
+        cout << "Enter  the length  of the square in centimetres : ";
         double side;
         cin >> side;
         square.setSide(side);
-        cout << "\n\n\n Shape : Square \n\nLength :\t"<< square.getSide() << "cm\nArea :\t"<< square.getArea() << "cm squared\nPerimiter :\t"<< square.getPerimeter()<<"cm"<<endl;
-        // getting  the  length  of the square
-        // cout << "\n\nSides : "<< square.getSide()<< endl;
+        cout << "\n\n\n Shape : Square \n\nLength :\t"<< square.getSide() << "cm\nArea :\t"<< square.getArea() << " cm squared\nPerimeter :\t"<< square.getPerimeter()<<"cm"<<endl;
+       
         
         break;
 
     case 2:
-        cout << "Circle";
+        cout << "Enter  the radius  of the circle in centimetres : ";
+        double circleRadius;
+        cin >> circleRadius;
+        circle.setRadius(circleRadius);
+        cout << "\n\n\n Shape : Circle \n\nRadius :\t"<< circle.getRadius() << "cm\nArea :\t"<< circle.area() << " cm squared\nPerimeter :\t"<< circle.getPerimeter()<<"cm"<<endl;
+       
         break;
     case 3:
-        cout << "Cylinder";
+        double cylinderRadius;
+        double cylinderHeight;
+
+        cout << "Enter  the radius  of the cylinder in centimetres : ";
+        cin >> cylinderRadius;
+        cout << "Enter  the height  of the cylinder in centimetres : ";
+        cin >> cylinderHeight;
+
+        cylinder.setRadius(cylinderRadius);
+        cylinder.setHeight(cylinderHeight);
+      
+        cout << "\n\n\n Shape : Cylinder \n\nRadius :\t"<< cylinderRadius << "cm\nHeight :\t"<< cylinderHeight << "cm\nArea :\t"<< cylinder.getArea() << " cm squared\nVolume :\t"<< cylinder.getVolume()<<"cm cubed"<<endl;
+
         break;
     case 4:
         cout << "Sphere";
