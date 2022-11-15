@@ -169,7 +169,7 @@ int main()
  
 
 //    displaying  the name and registration number of a student
-    printSuccess("Name:\tLEWIS MUNENE KIRIMI   \nReg. No.:\tSCT211-0014/2021   \nAssignment2    \nUnit code \t ICS2201    Unit Name : OBJECT ORIENTED  PROGRAMMING");
+    printSuccess("Name:\tLEWIS MUNENE KIRIMI   \nReg. No.:\tSCT211-0014/2021   \nAssignment2    \nUnit code \t ICS2201    \nUnit Name : OBJECT ORIENTED  PROGRAMMING 2");
 
 
     // declaring  objects of the classes Square, Circle, Cylinder and Sphere
@@ -236,7 +236,7 @@ int main()
         cout << "\n\n\n Shape : Sphere \n\nRadius :\t"<< sphereRadius << "cm\nArea :\t"<< sphere.getArea() << " cm squared\nVolume :\t"<< sphere.getVolume()<<"cm cubed"<<endl;
         break;
     case 5:
-        cout << "exit";
+        cout << "Bye Bye ! See you next time !"; 
         exit(0);
         break;
     
